@@ -14,7 +14,7 @@ export enum FirestoreCollection {
   TOPICS_POTENTIAL = 'topics-potential',
   TRANSIENTS = 'transients',
 }
-  
+
 export const firestoreCollectionDocs = {
   dynamicPanels: {
     tabs: 'tabs',
