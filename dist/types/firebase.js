@@ -23,4 +23,4 @@ exports.firestoreCollectionDocs = {
         tabs: 'tabs',
     }
 };
-exports.testAndRemove = 'test';
+exports.testAndRemove = 'remove';
