@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "declaration": true,
+        "emitDeclarationOnly": false,
+        "declarationMap": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "paths": {
+            "@firebase/firestore": [
+                "./node_modules/@firebase/firestore"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*",
+    ]
+}
