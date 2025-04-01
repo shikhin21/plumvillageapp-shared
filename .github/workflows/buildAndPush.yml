@@ -62,7 +62,7 @@ jobs:
       - name: Publish to GitHub Packages
         run: |
           echo "Publishing version v${{ env.VERSION }} to GitHub Packages"
-          npm publish
+          npm publish --access public
 
       # Create a GitHub release (automatically creates a tag)
       - name: Create GitHub release
