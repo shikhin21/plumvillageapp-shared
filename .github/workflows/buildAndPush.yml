@@ -53,18 +53,6 @@ jobs:
           git commit -m "chore: release v${{ env.VERSION }} [skip ci]"
           git push
 
-      # Create the .npmrc file with GitHub authentication for GitHub Packages
-      - name: Create .npmrc for GitHub Packages
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-
-      # Publish the package to GitHub Packages
-      - name: Publish to GitHub Packages
-        run: |
-          echo "Publishing version v${{ env.VERSION }} to GitHub Packages"
-          npm publish --access public
-
-      # Create a GitHub release (automatically creates a tag)
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         with:
@@ -74,3 +62,24 @@ jobs:
           prerelease: false
           body: |
             Release of version ${{ env.VERSION }}.
+
+  cleanup-dist:
+    needs: build-and-release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Delete dist directory and push
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          rm -rf dist
+          git rm -rf --cached dist || true
+
+          git commit -am "chore: cleanup dist [skip ci]" || echo "No changes to commit"
+          git push
