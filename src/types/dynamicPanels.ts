@@ -25,7 +25,7 @@ export type Panel<SupportedLanguageCodeType extends string | number | symbol, Ti
   startDate: TimestampLike;
   endDate: TimestampLike;
   src?: string;
-  version: number;
+  version?: number;
 } & PanelDetailByLanguage<SupportedLanguageCodeType>
 
 export type DynamicPanelsByLanguage<SupportedLanguageCodeType extends string | number | symbol> = {
