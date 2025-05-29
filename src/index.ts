@@ -1,2 +1,3 @@
 export * from './types/dynamicPanels';
 export * from './types/firebase';
+export * from './types/admin';
