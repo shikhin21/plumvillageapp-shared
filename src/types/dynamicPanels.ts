@@ -29,6 +29,7 @@ export type Panel<SupportedLanguageCodeType extends string | number | symbol, Ti
   appTesting?: boolean;
   appTestingStartDate?: TimestampLike;
   appTestingEndDate?: TimestampLike;
+  visibilityAudience?: 'donors-only' | 'non-donors-only';
 } & PanelDetailByLanguage<SupportedLanguageCodeType>
 
 export type DynamicPanelsByLanguage<SupportedLanguageCodeType extends string | number | symbol> = {
