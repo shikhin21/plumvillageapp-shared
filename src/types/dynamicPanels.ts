@@ -9,6 +9,15 @@ export type Tab = keyof typeof tabOptions;
 
 export type Position = 'one' | 'two' | 'three' | 'four' | 'five';
 
+export const audienceOptions = {
+  donors: 'Donors',
+  nonDonors: 'Non-Donors',
+}
+
+export type Audience = keyof typeof audienceOptions;
+
+export type Audiences = Audience[];
+
 export type PanelDetail = {
   src?: string;
   enabled: boolean;
@@ -29,6 +38,7 @@ export type Panel<SupportedLanguageCodeType extends string | number | symbol, Ti
   appTesting?: boolean;
   appTestingStartDate?: TimestampLike;
   appTestingEndDate?: TimestampLike;
+  visibilityAudience?: Audiences;
 } & PanelDetailByLanguage<SupportedLanguageCodeType>
 
 export type DynamicPanelsByLanguage<SupportedLanguageCodeType extends string | number | symbol> = {
