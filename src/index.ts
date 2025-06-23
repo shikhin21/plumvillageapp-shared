@@ -1,6 +1,6 @@
-export * from './types/admin';
-export * from './types/contributors';
-export * from './types/dynamicPanels';
-export * from './types/firebase';
-export * from './types/payments';
+export * from './types/admin.js';
+export * from './types/contributors.js';
+export * from './types/dynamicPanels.js';
+export * from './types/firebase.js';
+export * from './types/payments.js';
 
